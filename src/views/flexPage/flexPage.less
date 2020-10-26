@@ -1,0 +1,46 @@
+.flex-page-content {
+    .header {
+        background-color: #003366;
+        height: 70px;
+        display: flex;
+        padding-left: 40px;
+        align-items: center;
+        .logo {
+            color: #fff;
+            font-size: 30px;
+        }
+    }
+    .main-content {
+        background-color: #CCC;
+        width: 100%;
+        height: calc(100vh - 70px);
+        display: flex;
+        .render-box {
+            flex: 1;
+            box-sizing: border-box;
+            padding: 12px 20px;
+            .head-group {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .add-btn {
+                    background-color: #CC3333;
+                    padding: 5px 15px;
+                    color: #fff;
+                    box-shadow: 0px 1px 2px #ddd;
+                    cursor: pointer;
+                    user-select: none;
+                    font-size: 12px;
+                    &:active {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+        .code-box {
+            background-color: rgba(216, 216, 216, 0.5);
+            width: 357px;
+        }
+    }
+
+}
