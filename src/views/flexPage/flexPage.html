@@ -6,12 +6,11 @@
         <div class="render-box">
             <div class="head-group">
                 <div class="add-btn" @click.stop="createItem">添加Item</div>
-                {{contentStyleObj.father}}
                 <div class="add-btn" @click.stop="resetItem">初始化</div>
             </div>
             <div class="out-render-box">
                 <div class="main-class-tag">.main</div>
-                <div class="main-render-box" id="father" :style="contentStyleObj.father" ref="father" @click="showContentSetDialog = true">
+                <div :key="JSON.stringify(contentStyleObj.father)" class="main-render-box" id="father" :style="contentStyleObj.father" ref="father" @click="showContentSetDialog = true">
                     <div class="style-child-item" v-for="(item, index) in contentStyleObj.children" id="children" :style="item"># item_{{index}}</div>
                 </div>
             </div>

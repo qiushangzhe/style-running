@@ -9,7 +9,7 @@ export default {
       showItemSetDialog: false,
       // ----- 源数据 -------
       contentStyleObj: {
-        father: { flexDirection: null, flexWrap: null, flexFlow: null, justifyContent: null, alignItems: null, alignContent: null },
+        father: { flexDirection: null, flexWrap: null, justifyContent: null, alignItems: null, alignContent: null },
         children: [
           { order: null, flexGrow: null, flexShrink: null, flexBasis: null, flex: null, alignSelf: null }
         ]
