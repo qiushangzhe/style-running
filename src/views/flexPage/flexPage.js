@@ -1,11 +1,10 @@
-import qRadioGroup from '../../components/qRadioGroup'
 export default {
-  components: { qRadioGroup },
+  components: { },
   name: 'flex-page',
   data () {
     return {
       // ----- dialog控制参数 ------
-      showContentSetDialog: true,
+      showContentSetDialog: false,
       showItemSetDialog: false,
       // ----- 源数据 -------
       chooseItemObj: {},
