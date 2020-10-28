@@ -8,6 +8,7 @@ export default {
       showContentSetDialog: true,
       showItemSetDialog: false,
       // ----- 源数据 -------
+      chooseItemObj: {},
       contentStyleObj: {
         father: { flexDirection: null, flexWrap: null, justifyContent: null, alignItems: null, alignContent: null },
         children: [
@@ -22,6 +23,14 @@ export default {
           { key: 'justifyContent', selectList: [ 'flex-start', 'flex-end', 'center', 'space-between', 'space-around' ], default: 'flex-start' },
           { key: 'alignItems', selectList: [ 'flex-start', 'flex-end', 'center', 'baseline', 'stretch' ], default: 'stretch' },
           { key: 'alignContent', selectList: [ 'flex-start', 'flex-end', 'center', 'baseline', 'stretch' ], default: 'stretch' },
+        ],
+        c: [
+          { key: 'order', selectList: [], default: 0, type: 'number' },
+          { key: 'flexGrow', selectList: [], default: 0, type: 'number' },
+          { key: 'flexShrink', selectList: [], default: 1, type: 'number' },
+          { key: 'flexBasis', selectList: [], default: 'auto', type: 'px' },
+          { key: 'flex', selectList: [], default: '', type: 'double', double: [ 'flexGrow', 'flexShrink', 'flexBasis' ] },
+          { key: 'alignSelf', selectList: [ 'flex-start', 'flex-end', 'center', 'baseline', 'stretch', 'auto' ], default: 'auto' },
         ]
       }
     }
@@ -63,6 +72,9 @@ export default {
       let temp = this.contentStyleObj.father;
       return temp[pkey] !== null ? temp[pkey] === v : defaultV === v;
     },
+    checkItemChoose (item) {
+      return item === this.chooseItemObj;
+    },
     styleFValueClicked (pkey, v) {
       let temp = this.contentStyleObj.father;
       temp[pkey] = v;
@@ -83,7 +95,17 @@ export default {
     },
     closeDialogF () {
       this.showContentSetDialog = false
-      console.log(this.contentStyleObj)
+    },
+    closeDialogC () {
+      this.showItemSetDialog = false;
+      this.chooseItemObj = null;
+    },
+    deleteItem (item, index) {
+      this.contentStyleObj.children.splice(index, 1);
+    },
+    itemClicked (item, index) {
+      this.showItemSetDialog = true
+      this.chooseItemObj = item
     }
   }
 }

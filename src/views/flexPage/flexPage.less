@@ -69,6 +69,37 @@
                     color: #fff;
                     font-size: 20px;
                     font-weight: bold;
+                    flex-direction: column;
+                    cursor: pointer;
+                    user-select: none;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                    .class-text {
+                        font-size: 12px;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    .close-btn {
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        background: url('../../assets/close-btn.png');
+                        background-size: contain;
+                        bottom: 5px;
+                        right:5px;
+                        cursor: pointer;
+                        user-select: none;
+                        border-radius: 20px;
+                        &:hover {
+                            box-shadow: 1px 1px 4px 3px #fff;
+                        }
+                    }
+                }
+
+                .choose-item {
+                    background-color: #003366;
                 }
             }
         }
